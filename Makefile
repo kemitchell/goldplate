@@ -1,6 +1,9 @@
 COMMONFORM=node_modules/.bin/commonform
+TARGET=goldplate
 
-all: goldplate.docx
+all: $(TARGET:=.commonform)
+
+pdf: $(TARGET:=.pdf)
 
 $(COMMONFORM):
 	npm i --save commonform-cli
@@ -12,3 +15,6 @@ $(COMMONFORM):
 		--number outline \
 		< $< \
 		> $@
+
+%.pdf: %.docx
+	doc2pdf $<
