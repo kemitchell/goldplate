@@ -19,7 +19,7 @@ $(COMMONFORM):
 %.pdf: %.docx
 	doc2pdf $<
 
-.PHONY: lint
+.PHONY: lint critique
 
 lint: $(COMMONFORM)
 	$(COMMONFORM) lint < $(TARGET:docx=commonform)
