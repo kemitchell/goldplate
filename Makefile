@@ -1,9 +1,9 @@
 COMMONFORM=node_modules/.bin/commonform
-TARGETS=goldplate.docx
+TARGET=goldplate.docx
 
-all: $(TARGETS)
+all: $(TARGET)
 
-pdf: $(TARGETS:docx=pdf)
+pdf: $(TARGET:docx=pdf)
 
 $(COMMONFORM):
 	npm i --save commonform-cli
@@ -18,3 +18,11 @@ $(COMMONFORM):
 
 %.pdf: %.docx
 	doc2pdf $<
+
+.PHONY: lint
+
+lint: $(COMMONFORM)
+	$(COMMONFORM) lint < $(TARGET:docx=commonform)
+
+critique: $(COMMONFORM)
+	$(COMMONFORM) critique < $(TARGET:docx=commonform)
