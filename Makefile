@@ -5,6 +5,8 @@ all: $(TARGET)
 
 pdf: $(TARGET:docx=pdf)
 
+.SECONDARY: node_modules
+
 $(COMMONFORM):
 	npm i --save commonform-cli
 
