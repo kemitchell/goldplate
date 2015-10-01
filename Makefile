@@ -26,3 +26,6 @@ lint: $(COMMONFORM)
 
 critique: $(COMMONFORM)
 	$(COMMONFORM) critique < $(TARGET:docx=commonform)
+
+clean:
+	rm -rf *.docx *.pdf node_modules
