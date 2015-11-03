@@ -8,7 +8,7 @@ pdf: $(TARGET:docx=pdf)
 .SECONDARY: node_modules
 
 $(COMMONFORM):
-	npm i --save commonform-cli
+	npm i
 
 %.docx: %.commonform %.json $(COMMONFORM)
 	$(COMMONFORM) render \
