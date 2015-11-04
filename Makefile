@@ -24,7 +24,7 @@ $(COMMONFORM):
 %.commonform: %.commonform.m4
 	m4 < $< > $@
 
-.PHONY: lint critique
+.PHONY: lint critique clean
 
 lint: goldplate.commonform $(COMMONFORM)
 	cat definitions.commonform $< | $(COMMONFORM) lint
