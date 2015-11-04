@@ -13,7 +13,7 @@ $(COMMONFORM):
 
 $(TARGET): goldplate.commonform $(SECTIONS) goldplate.json $(COMMONFORM)
 	$(COMMONFORM) render \
-		--blanks goldplatejson \
+		--blanks goldplate.json \
 		--format docx \
 		--number outline \
 		< $< \
