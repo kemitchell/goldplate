@@ -1,3 +1,21 @@
 language: "node_js"
 script: "make lint"
-sudo: false
+sudo: true
+before_script:
+  - "sudo apt-get update"
+  - "sudo apt-get install -y unoconv"
+deploy:
+  provider: "releases"
+  api_key:
+    secure: "FwB8zm6n4V9avn3FSHHg3CziaLwB4Y7pkf96G65ogn3HlY29eNzqZ9bmMbyB1p66MbkyltDHN0SCZIZ9wfuJsC0D+dK4Y3IkwSAEVmiuebEnI/mSr+xetW4XjXKuyQNuSd51OhbStIK7dYOWbZ917rkJcjrewOkU9Hk8kWV+UroOYXVyec/4AWvJP9H6t9eNA/yKg9qxm/LIu2oZH5N806FXrddAWh2T15Bixvn7J2KzjhWZxqOmbjCPewz63fHs8PVlxBd3M/KiogrsYpMgPUq3Au3TS835j2wfgiLDU+9KBd9lTFZY2N+tpJkT1bic5VNGjdi5dMLiq7hYUPb81dSYz6/fyAaE3Ijhzsp8DNAjz7M05AX/PpPUQ+WAmj9M04lhFUVv4Es2LfLzcNhM5HWm/Nu89xkUT2OD0ROGaHI1Im5MRRgg9lyaXumXnHALmkHEhi7ZDGJCTJ7Uf1mYHoYi/PuTg3K0tQitjo3REUHp02S6WBxHFKWqP53P1SROBnPkw9SHYQxYxl2uufqeIqfMHT+IR2YHiBMSQ1XMAtnyv/4Cn6crzzNePIZpMB+sQHqCig2eDATLVxJNX8kpMu85MdaisOT1meIud2W/O1GW7KezWKXEEWmnBEhpSu+RRqDyOqjdV0MnHpUFPpBRBvt7tPapgS1XvF3t9ur1CG8="
+  file:
+    - "goldplate.pdf"
+    - "goldplate.docx"
+  skip_cleanup: true
+  on:
+    repo: "kemitchell/goldplate"
+    branch: "master"
+    tags: true
+before_deploy:
+  - "make goldplate.docx"
+  - "make goldplate.pdf"
