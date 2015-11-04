@@ -24,7 +24,7 @@ $(COMMONFORM):
 .PHONY: lint critique
 
 lint: $(COMMONFORM)
-	$(COMMONFORM) lint < $(TARGET:docx=commonform)
+	cat definitions.commonform $(TARGET:docx=commonform) | $(COMMONFORM) lint
 
 critique: $(COMMONFORM)
 	$(COMMONFORM) critique < $(TARGET:docx=commonform)
