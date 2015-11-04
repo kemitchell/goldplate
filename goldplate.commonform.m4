@@ -1,4 +1,4 @@
-include(sections/assignment.commonform)
+include(sections/no-assignment.commonform)
 include(sections/delegation.commonform)
 include(sections/enforcement.commonform)
 include(sections/law.commonform)
