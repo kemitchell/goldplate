@@ -21,13 +21,16 @@ $(COMMONFORM):
 %.pdf: %.docx
 	doc2pdf $<
 
+%.commonform: %.commonform.m4
+	m4 < $< > $@
+
 .PHONY: lint critique
 
-lint: $(COMMONFORM)
-	cat definitions.commonform $(TARGET:docx=commonform) | $(COMMONFORM) lint
+lint: goldplate.commonform $(COMMONFORM)
+	cat definitions.commonform $< | $(COMMONFORM) lint
 
-critique: $(COMMONFORM)
-	$(COMMONFORM) critique < $(TARGET:docx=commonform)
+critique: goldplate.commonform $(COMMONFORM)
+	$(COMMONFORM) critique < $<
 
 clean:
 	rm -rf *.docx *.pdf node_modules
