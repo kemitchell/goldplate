@@ -1,4 +1,5 @@
 COMMONFORM=node_modules/.bin/commonform
+SECTIONS=$(wildcard sections/*.commonform)
 TARGET=goldplate.docx
 
 all: $(TARGET)
@@ -10,7 +11,7 @@ pdf: $(TARGET:docx=pdf)
 $(COMMONFORM):
 	npm i
 
-%.docx: %.commonform %.json $(COMMONFORM)
+$(TARGET): goldplate.commonform $(SECTIONS) goldplate.json $(COMMONFORM)
 	$(COMMONFORM) render \
 		--blanks $*.json \
 		--format docx \
