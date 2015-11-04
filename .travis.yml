@@ -1,5 +1,6 @@
 language: "node_js"
 script: "make lint"
+node_js: "node"
 sudo: true
 deploy:
   provider: "releases"
