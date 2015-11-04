@@ -1,9 +1,6 @@
 language: "node_js"
 script: "make lint"
 sudo: true
-before_script:
-  - "sudo apt-get update"
-  - "sudo apt-get install -y unoconv"
 deploy:
   provider: "releases"
   api_key:
@@ -17,5 +14,7 @@ deploy:
     branch: "master"
     tags: true
 before_deploy:
+  - "sudo apt-get update"
+  - "sudo apt-get install -y unoconv"
   - "make goldplate.docx"
   - "make goldplate.pdf"
