@@ -1,5 +1,6 @@
 include(sections/no-assignment.commonform)
 include(sections/no-delegation.commonform)
+include(sections/waiver.commonform)
 include(sections/enforcement.commonform)
 include(sections/law.commonform)
 include(sections/litigation.commonform)
