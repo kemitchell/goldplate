@@ -35,4 +35,4 @@ critique: goldplate.cform $(COMMONFORM)
 	$(COMMONFORM) critique < $<
 
 clean:
-	rm -rf *.docx *.pdf node_modules
+	rm -rf *.docx *.pdf
