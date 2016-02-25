@@ -35,7 +35,7 @@ critique: goldplate.cform $(COMMONFORM)
 	$(COMMONFORM) critique < $<
 
 clean:
-	rm -rf *.docx *.pdf
+	rm -rf $(TARGET) $(TARGET:.docx=.cform) $(TARGET:.docx=.pdf)
 
 share: $(COMMONFORM)
 	for cform in $(SECTIONS); do \
