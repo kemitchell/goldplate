@@ -1,4 +1,5 @@
 COMMONFORM=node_modules/.bin/commonform
+CFTEMPLATE=node_modules/.bin/cftemplate
 SECTIONS=$(wildcard sections/*.cform)
 TARGET=goldplate.docx
 
@@ -8,7 +9,7 @@ pdf: $(TARGET:docx=pdf)
 
 .SECONDARY: node_modules
 
-$(COMMONFORM):
+$(COMMONFORM) $(CFTEMPLATE):
 	npm i
 
 $(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
@@ -22,8 +23,8 @@ $(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
 %.pdf: %.docx
 	doc2pdf $<
 
-%.cform: %.cform.m4
-	m4 < $< > $@
+%.cform: %.cftemplate $(CFTEMPLATE)
+	$(CFTEMPLATE) $< > $@
 
 .PHONY: lint critique clean
 
