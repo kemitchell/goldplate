@@ -26,7 +26,7 @@ $(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
 %.cform: %.cftemplate $(CFTEMPLATE)
 	$(CFTEMPLATE) $< > $@
 
-.PHONY: lint critique clean
+.PHONY: lint critique clean share
 
 lint: goldplate.cform $(COMMONFORM)
 	cat definitions.cform $< | $(COMMONFORM) lint
@@ -36,3 +36,8 @@ critique: goldplate.cform $(COMMONFORM)
 
 clean:
 	rm -rf *.docx *.pdf
+
+share: $(COMMONFORM)
+	for cform in $(SECTIONS); do \
+		$(COMMONFORM) share $$cform ; \
+	done
