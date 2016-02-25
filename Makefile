@@ -1,5 +1,5 @@
 COMMONFORM=node_modules/.bin/commonform
-SECTIONS=$(wildcard sections/*.commonform)
+SECTIONS=$(wildcard sections/*.cform)
 TARGET=goldplate.docx
 
 all: $(TARGET)
@@ -11,7 +11,7 @@ pdf: $(TARGET:docx=pdf)
 $(COMMONFORM):
 	npm i
 
-$(TARGET): goldplate.commonform $(SECTIONS) goldplate.json $(COMMONFORM)
+$(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
 	$(COMMONFORM) render \
 		--blanks goldplate.json \
 		--format docx \
@@ -22,15 +22,15 @@ $(TARGET): goldplate.commonform $(SECTIONS) goldplate.json $(COMMONFORM)
 %.pdf: %.docx
 	doc2pdf $<
 
-%.commonform: %.commonform.m4
+%.cform: %.cform.m4
 	m4 < $< > $@
 
 .PHONY: lint critique clean
 
-lint: goldplate.commonform $(COMMONFORM)
-	cat definitions.commonform $< | $(COMMONFORM) lint
+lint: goldplate.cform $(COMMONFORM)
+	cat definitions.cform $< | $(COMMONFORM) lint
 
-critique: goldplate.commonform $(COMMONFORM)
+critique: goldplate.cform $(COMMONFORM)
 	$(COMMONFORM) critique < $<
 
 clean:
