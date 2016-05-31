@@ -1,0 +1,86 @@
+    # California Civil Code 1654 (2016)
+    #     In cases of uncertainty not removed by the preceding rules,
+    #     the language of a contract should be interpreted most strongly
+    #     against the party who caused the uncertainty to exist.
+
+    # California Civil Code 1636:
+    #     A contract must be so interpreted as to give effect to the
+    #     mutual intention of the parties as it existed at the time of
+    #     contracting, so far as the same is ascertainable and lawful.
+
+    # California Civil Code 1638
+    #     The language of a contract is to govern its interpretation,
+    #     if the language is clear and explicit, and does not involve
+    #     an absurdity.
+
+    # California Civil Code 1639
+    #     When a contract is reduced to writing, the intention of
+    #     the parties is to be ascertained from the writing alone,
+    #     if possible; subject, however, to the other provisions of
+    #     this Title.
+
+    # California Civil Jury Instruction 320 (2016):
+    #     In determining the meaning of the words of the contract,
+    #     you must first consider all of the other instructions that
+    #     I have given you. If, after considering these instructions,
+    #     you still cannot agree on the meaning of the words, then you
+    #     should interpret the contract against [the party that drafted
+    #     the disputed words/the party that caused the uncertainty].
+    #
+    #     ...
+    #
+    #     Sources and Authority
+    #
+    #     - Language Interpreted Against Party Causing
+    #       Uncertainty. Civil Code section 1654.
+    #
+    #     - "[T]his [Civil Code section 1654] canon applies only as a
+    #       tie breaker, when other canons fail to dispel uncertainty."
+    #       Pacific Gas & Electric Co. v. Superior Court (1993) 15
+    #       Cal.App.4th 576, 596 [19 Cal.Rptr.2d 295], disapproved
+    #       on other grounds in Advanced Micro Devices, Inc. v. Intel
+    #       Corp. (1994) 9 Cal.4th 362, 376–377 [36 Cal.Rptr.2d 581,
+    #       885 P.2d 994].)
+    #
+    #     - "The trial court's instruction...embodies a general
+    #       rule of contract interpretation that was applicable to
+    #       the negotiated agreement between [the parties]. It may
+    #       well be that in a particular situation the discussions and
+    #       exchanges between the parties in the negotiation process
+    #       may make it difficult or even impossible for the jury to
+    #       determine which party caused a particular contractual
+    #       ambiguity to exist, but this added complexity does not
+    #       make the underlying rule irrelevant or inappropriate
+    #       for a jury instruction. We conclude, accordingly,
+    #       that the trial court here did not err in instructing
+    #       the jury on Civil Code section 1654's general rule of
+    #       contract interpretation." (City of Hope National Medical
+    #       Center v. Genentech, Inc. (2008) 43 Cal.4th 375, 398
+    #       [75 Cal.Rptr.3d 333, 181 P.3d 142].)
+    #
+    #     - "[I]f the uncertainty is not removed by application of the
+    #       other rules of interpretation, a contract must be
+    #       interpreted most strongly against the party who prepared
+    #       it. This last rule is applied with particular force in the
+    #       case of adhesion contracts." (Badie v. Bank of America
+    #       (1998) 67 Cal.App.4th 779, 801 [79 Cal.Rptr.2d 273],
+    #       internal citations omitted.)
+    #
+    #     - "[T]he doctrine of contra proferentem (construing ambiguous
+    #       agreements against the drafter) applies with even
+    #       greater force when the person who prepared the writing
+    #       is a lawyer."  Mayhew v. Benninghoff (1997) 53
+
+    # Mitchell v. Exhibition Foods, Inc. (1986) 184 Cal.App.3d 1033
+    #
+    #      - trial court found the provision in quest jointly drafted
+    #
+    #      - therefore, no basis to apply contra proferentem
+
+    # California Evidence Code 622:
+    #     The facts recited in a written instrument are conclusively
+    #     presumed to be true as between the parties thereto, or their
+    #     successors in interest; but this rule does not apply to the
+    #     recital of a consideration.
+
+    \ Negotiated Terms \ Each <Party> reviewed, and had a chance to negotiate, every provision of this <Agreement>. Words of uncertain meaning will not be interpreted more strongly against the <Party> that drafted them for that reason alone.

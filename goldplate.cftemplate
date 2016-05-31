@@ -10,4 +10,5 @@
 (( require ./sections/successors-and-assigns ))
 (( require ./sections/headings ))
 (( require ./sections/entire-agreement ))
+(( require ./sections/negotiated ))
 (( require ./sections/bad-terms ))
