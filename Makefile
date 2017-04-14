@@ -12,7 +12,7 @@ pdf: $(TARGET:docx=pdf)
 $(COMMONFORM) $(CFTEMPLATE):
 	npm i
 
-$(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
+$(TARGET): goldplate.cform $(SECTIONS) goldplate.json | $(COMMONFORM)
 	$(COMMONFORM) render \
 		--blanks goldplate.json \
 		--format docx \
@@ -23,21 +23,21 @@ $(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
 %.pdf: %.docx
 	doc2pdf $<
 
-%.cform: %.cftemplate $(CFTEMPLATE)
+%.cform: %.cftemplate | $(CFTEMPLATE)
 	$(CFTEMPLATE) $< > $@
 
 .PHONY: lint critique clean share
 
-lint: goldplate.cform $(COMMONFORM)
+lint: goldplate.cform | $(COMMONFORM)
 	cat definitions.cform $< | ( $(COMMONFORM) lint || true ) | ( fgrep -v "only once" || true )
 
-critique: goldplate.cform $(COMMONFORM)
+critique: goldplate.cform | $(COMMONFORM)
 	$(COMMONFORM) critique < $<
 
 clean:
 	rm -rf $(TARGET) $(TARGET:.docx=.cform) $(TARGET:.docx=.pdf)
 
-share: $(COMMONFORM)
+share: | $(COMMONFORM)
 	for cform in $(SECTIONS); do \
 		$(COMMONFORM) share $$cform ; \
 	done
