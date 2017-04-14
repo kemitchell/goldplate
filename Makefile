@@ -29,7 +29,7 @@ $(TARGET): goldplate.cform $(SECTIONS) goldplate.json $(COMMONFORM)
 .PHONY: lint critique clean share
 
 lint: goldplate.cform $(COMMONFORM)
-	cat definitions.cform $< | $(COMMONFORM) lint
+	cat definitions.cform $< | ( $(COMMONFORM) lint || true ) | ( fgrep -v "only once" || true )
 
 critique: goldplate.cform $(COMMONFORM)
 	$(COMMONFORM) critique < $<
